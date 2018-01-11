@@ -2,6 +2,7 @@
 # vim: set fileencoding=utf-8 :
 
 from flask import Flask
+from flask import request
 app = Flask(__name__)
 
 __appname__     = "__main__"
@@ -15,16 +16,10 @@ __email__       = "marco@sirabella.org"
 __status__      = "Prototype"  # "Prototype", "Development" or "Production"
 __module__      = ""
 
-#@app.route("/", methods=["POST"])
-#def handle_simple_post_request():
-    #print(request)
-
-from flask import Flask
-app = Flask(__name__)
-
-@app.route('/')
-def hello_world():
-    return 'Hello, World!'
+@app.route("/", methods=["POST"])
+def handle_simple_post_request():
+    print(request.form)
+    return "no"
 
 
 
